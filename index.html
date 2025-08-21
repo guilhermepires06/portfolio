@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guilherme Pires — Portfólio</title>
+  <meta name="description" content="Portfólio profissional de Guilherme Pires: desenvolvimento, suporte técnico, redes e certificações." />
+  <meta name="color-scheme" content="dark light">
+  <meta property="og:title" content="Guilherme Pires — Portfólio">
+  <meta property="og:description" content="Desenvolvedor Mobile & Suporte Técnico.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0b122b" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    :root{
+      --bg:#0b122b; --bg-2:#0a1024; --paper:#0e1736;
+      --ink:#e8edff; --muted:#b7c0de; --line:rgba(255,255,255,.10);
+      --brand:#5db0ff; --brand-2:#7ce3ff;
+      --accent:#8fb2ff; --shadow:0 24px 70px rgba(0,0,0,.45);
+      --radius:18px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:
+      radial-gradient(900px 500px at 10% -10%, rgba(125,175,255,.12), transparent),
+      radial-gradient(900px 500px at 100% 0%, rgba(124,227,255,.10), transparent),
+      linear-gradient(180deg,var(--bg),var(--bg-2) 45%, #080e20 100%);
+      color:var(--ink);
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji");
+      line-height:1.55;
+    }
+    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .nav{position:sticky;top:0;backdrop-filter:saturate(130%) blur(8px);
+         background:rgba(6,12,28,.6); border-bottom:1px solid var(--line); z-index:10}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.2px}
+    .nav ul{display:none;gap:18px;list-style:none;padding:0;margin:0}
+    .nav a[aria-current="page"]{text-decoration:underline}
+    @media(min-width:820px){ .nav ul{display:flex} }
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid var(--line);
+         border-radius:12px; background:linear-gradient(180deg,rgba(93,176,255,.15),rgba(124,227,255,.10));
+         box-shadow:var(--shadow); color:var(--ink); text-decoration:none; font-weight:600}
+    .btn:hover{transform:translateY(-1px)}
+    .primary{background:linear-gradient(180deg,rgba(124,227,255,.16),rgba(93,176,255,.16)); border-color:rgba(124,227,255,.35)}
+    .hero{display:grid;gap:24px;grid-template-columns:1fr;align-items:center;margin-top:28px}
+    @media(min-width:950px){ .hero{grid-template-columns:1.2fr .8fr} }
+    .glass{border:1px solid var(--line); background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.04));
+           border-radius:var(--radius); padding:24px; box-shadow:var(--shadow)}
+    .title{font-size:clamp(30px,4.5vw,46px);margin:0 0 8px;font-weight:900;letter-spacing:-.02em}
+    .subtitle{color:var(--muted);margin:0 0 12px;font-weight:500}
+    .lead{max-width:60ch}
+    .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .badge{border:1px solid var(--line);border-radius:999px;padding:6px 10px;color:#dfe9ff;font-size:13px;background:rgba(255,255,255,.05)}
+    .grid{display:grid;gap:18px}
+    .two{grid-template-columns:1fr} @media(min-width:930px){ .two{grid-template-columns:1fr 1fr} }
+    .section h2{font-size:22px;margin:0 0 12px}
+    .muted{color:var(--muted)}
+    .kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .kpi .box{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:rgba(255,255,255,.04);text-align:center}
+    .kpi .num{font-weight:800;font-size:20px}
+    .timeline{list-style:none;margin:0;padding:0;display:grid;gap:18px;position:relative}
+    .timeline:before{content:"";position:absolute;left:16px;top:0;bottom:0;width:2px;background:linear-gradient(var(--accent),transparent)}
+    .item{display:grid;grid-template-columns:34px 1fr;gap:12px}
+    .dot{margin-top:4px;width:12px;height:12px;border-radius:50%;background:linear-gradient(180deg,var(--brand),var(--brand-2));box-shadow:0 0 0 3px rgba(93,176,255,.18)}
+    .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .role{color:#dfe6ff}
+    .skills{display:grid;gap:12px}
+    @media(min-width:560px){ .skills{grid-template-columns:1fr 1fr} }
+    .skill{display:flex;flex-direction:column;gap:6px}
+    .bar{height:10px;border-radius:12px;background:rgba(255,255,255,.14);overflow:hidden}
+    .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--brand-2))}
+    .projects{display:grid;gap:16px}
+    @media(min-width:960px){ .projects{grid-template-columns:repeat(3,1fr)} }
+    .card{border:1px solid var(--line);border-radius:14px;padding:16px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.04))}
+    .card h3{margin:0 0 6px;font-size:16px}
+    .contact-grid{display:grid;gap:12px}
+    @media(min-width:780px){ .contact-grid{grid-template-columns:repeat(3,1fr)} }
+    footer{color:#9db3e7;font-size:12px;text-align:center;margin:28px 0 12px}
+    .addr{white-space:pre-line}
+    .cert-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+    .cert{padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.04)}
+    .cert strong{color:#fff}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+</head>
+<body>
+  <a href="#conteudo" class="sr-only">Pular para o conteúdo</a>
+  <nav class="nav" role="navigation" aria-label="principal">
+    <div class="container nav-inner">
+      <a href="#topo" class="brand"></a>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#experiencia">Experiência</a></li>
+        <li><a href="#formacao">Formação</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#certificacoes">Certificações</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a class="btn primary" href="curriculo2025.pdf" download aria-label="Baixar currículo em PDF">Baixar CV</a>
+    </div>
+  </nav>
+
+  <main id="conteudo" class="container" style="padding-top:18px">
+    <section class="hero" id="topo">
+      <div class="glass">
+        <h1 class="title">Guilherme Fernando Pires</h1>
+        <p class="subtitle">Barretos • SP</p>
+        <p class="lead">Estudante de Sistemas de Informação com experiência em Suporte Técnico, Desenvolvimento Mobile (Delphi) e redes (MikroTik/VLANs). Focado em qualidade, aprendizado contínuo e soluções eficientes.</p>
+        <div class="badges" aria-label="atributos">
+          <span class="badge">Estado civil: Casado</span>
+          <span class="badge">CNH: AB</span>
+          <span class="badge">Disponível para CLT/PJ</span>
+        </div>
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+        </div>
+      </div>
+      <div class="glass" aria-labelledby="contatos">
+        <h2 id="contatos" style="margin:0 0 10px">Contatos</h2>
+        <div class="grid">
+          <div><strong>Telefone:</strong> <a href="tel:+5517981231655">(17) 98123‑1655</a></div>
+          <div><strong>E‑mail:</strong> <a href="mailto:guilherme.gfp@hotmail.com">guilherme.gfp@hotmail.com</a></div>
+          <div class="addr"><strong>Endereço:</strong> Rua mp11 Sírio Alves de Almeida, 978 — Cidade Barretos, São Paulo</div>
+          <div><strong>GitHub:</strong> <a href="https://github.com/guilhermepires06" target="_blank" rel="noreferrer">github.com/guilhermepires06</a></div>
+          <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/guilherme-pires-19a1351a5/" target="_blank" rel="noreferrer">/in/guilherme-pires-19a1351a5/</a></div>
+        </div>
+        <div class="kpi" style="margin-top:12px" aria-label="indicadores">
+          <div class="box"><div class="num">7+ anos</div><div class="muted">experiência em suporte</div></div>
+          <div class="box"><div class="num">3+ anos</div><div class="muted">dev/mobile & redes</div></div>
+          <div class="box"><div class="num">100%</div><div class="muted">foco em qualidade</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" style="margin-top:26px">
+      <div class="glass">
+        <h2>Sobre</h2>
+        <p class="muted">Profissional com base sólida em atendimento técnico e desenvolvimento, atuando com resolução de incidentes, implantação/ativações e criação de soluções mobile em Delphi. Interesse especial por redes (MikroTik/VLANs) e boas práticas de código.</p>
+      </div>
+    </section>
+
+    <section id="experiencia" aria-label="Linha do tempo profissional">
+      <div class="glass">
+        <h2>Experiência</h2>
+        <ul class="timeline">
+          <li class="item">
+            <div class="dot" aria-hidden="true"></div>
+            <div>
+              <div class="row"><div><strong>Siga Benz</strong> — <span class="role">Auxiliar Financeiro</span></div><div class="muted">06/2024 — Atual</div></div>
+              <ul class="muted" style="margin:.4rem 0 0 1rem">
+                <li>Rotinas administrativas e apoio a processos internos;</li>
+                <li>Organização e padronização de fluxos.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="item">
+            <div class="dot"></div>
+            <div>
+              <div class="row"><div><strong>Liceu Tec Barretos</strong> — <span class="role">Professor (Contrato)</span></div><div class="muted">01/2024 — 12/2025</div></div>
+              <ul class="muted" style="margin:.4rem 0 0 1rem">
+                <li>Conteúdos de tecnologia e fundamentos de desenvolvimento;</li>
+                <li>Ênfase em boas práticas e versionamento.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="item">
+            <div class="dot"></div>
+            <div>
+              <div class="row"><div><strong>Oniro Sistema</strong> — <span class="role">Dev Mobile (Delphi)</span></div><div class="muted">02/2022 — 06/2024</div></div>
+              <ul class="muted" style="margin:.4rem 0 0 1rem">
+                <li>Desenvolvimento e manutenção de apps Delphi;</li>
+                <li>Correções, performance e UX.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="item">
+            <div class="dot"></div>
+            <div>
+              <div class="row"><div><strong>NetBarretos</strong> — <span class="role">Suporte Técnico</span></div><div class="muted">08/2016 — 02/2022</div></div>
+              <ul class="muted" style="margin:.4rem 0 0 1rem">
+                <li>Atendimento ao usuário e ativações;</li>
+                <li>Diagnóstico e solução de problemas.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="item">
+            <div class="dot"></div>
+            <div>
+              <div class="row"><div><strong>JDNET Telecom</strong> — <span class="role">Suporte Técnico</span></div><div class="muted">03/2015 — 05/2016</div></div>
+              <ul class="muted" style="margin:.4rem 0 0 1rem">
+                <li>Suporte N1 e configuração básica de rede;</li>
+                <li>Acompanhamento de chamados e SLAs.</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="formacao">
+      <div class="two grid">
+        <div class="glass">
+          <h2>Formação</h2>
+          <p><strong>Faculdade Barretos</strong><br>Sistemas de Informação (cursando) — início 06/2022</p>
+          <hr style="border:none;border-top:1px solid var(--line);margin:12px 0">
+          <p><strong>Etec Cel. Raphael Brandão</strong><br>Técnico em Desenvolvimento de Sistemas — 01/2020 a 12/2021</p>
+        </div>
+        <div class="glass">
+          <h2>Cursos</h2>
+          <p><strong>Treinamento básico em MikroTik — Rede Brasil</strong><br><span class="muted">Concluído em 04/04/2019</span></p>
+          <hr style="border:none;border-top:1px solid var(--line);margin:12px 0">
+          <p><strong>Treinamento básico de VLANs — EAD CCNA</strong><br><span class="muted">Concluído em 28/08/2019</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades">
+      <div class="glass">
+        <h2>Habilidades</h2>
+        <div class="skills">
+          <div class="skill"><div>Delphi (mobile)</div><div class="bar" aria-hidden="true"><span style="width:85%"></span></div></div>
+          <div class="skill"><div>Redes (MikroTik/VLANs)</div><div class="bar"><span style="width:80%"></span></div></div>
+          <div class="skill"><div>Suporte Técnico</div><div class="bar"><span style="width:90%"></span></div></div>
+          <div class="skill"><div>Git & GitHub</div><div class="bar"><span style="width:70%"></span></div></div>
+          <div class="skill"><div>Trabalho em equipe</div><div class="bar"><span style="width:90%"></span></div></div>
+          <div class="skill"><div>Comunicação</div><div class="bar"><span style="width:85%"></span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="glass">
+        <h2>Projetos</h2>
+        <div class="projects">
+          <article class="card">
+            <h3>App Mobile em Delphi</h3>
+            <p class="muted">Aplicativo com foco em estabilidade e UX. <em></em>.</p>
+          </article>
+          <article class="card">
+            <h3>Ferramenta de Suporte</h3>
+            <p class="muted">Automação para atendimento. <em></em>.</p>
+          </article>
+          <article class="card">
+            <h3>Laboratório de Redes</h3>
+            <p class="muted">Topologias de estudo (MikroTik/VLANs). <em></em>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificacoes">
+      <div class="glass">
+        <h2>Certificações</h2>
+        <ul class="cert-list">
+          <li class="cert"><strong>Pentester</strong> — IBSEC (10/02/2025)</li>
+          <li class="cert"><strong>Introdução ao GitHub Copilot</strong> — Microsoft/DIO (14/01/2025)</li>
+          <li class="cert"><strong>Versionamento de Código com Git/GitHub</strong> — DIO (15/01/2025)</li>
+          <li class="cert"><strong>Introdução ao Hardware Hacking</strong> — Solyd (22/09/2024)</li>
+          <li class="cert"><strong>Imersão SAP Foundations</strong> — Trainning (09/05/2024)</li>
+          <li class="cert"><strong>Introdução ao Pentest na Prática</strong> — DESEC (08/02/2024)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="glass">
+        <h2>Contato</h2>
+        <div class="contact-grid">
+          <a class="btn" href="tel:+5517981231655">Ligar agora</a>
+          <a class="btn" href="mailto:guilherme.gfp@hotmail.com">Enviar e‑mail</a>
+          <a class="btn" target="_blank" href="https://www.linkedin.com/in/guilherme-pires-19a1351a5/" rel="noreferrer">LinkedIn</a>
+        </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="cv">
+      <div class="glass">
+        <h2>Currículo (PDF)</h2>
+        <p class="muted">O botão abaixo aponta para <code>curriculo2025.pdf</code> (coloque os dois arquivos na mesma pasta ao publicar).</p>
+        <a class="btn primary" href="curriculo2025.pdf" download>Baixar PDF</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="y"></span> Guilherme Pires • Portfólio</footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
